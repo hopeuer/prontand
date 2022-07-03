@@ -28,7 +28,7 @@
         #main .header{width: 100%; height: 120px;} 
         #main .logo{float: left; margin:  20px 0 0 0;  
                     width: 180px; height: 80px;  color: #716E64;} 
-        #main .nav{ float: right; margin: 50px 0 0 0;}
+        #main .nav{ float: right; margin: 50px 0 0 0; display: none;}
         #main .nav li{ float: left; margin-right: 50px;}     
         #main .nav a{font-size: 20px; font-weight: 600; color:#716E64; 
                     } 
@@ -37,6 +37,9 @@
         #main h2{ float: left; width: 100%; margin:300px 0 0 0; 
                   font-size:50px; text-align: right;
                   padding-right:100px; box-sizing: border-box;}
+        #introduce1{display: none;}
+        #introduce2{display: none;}
+                
         #main p{float:right; margin:20px 100px 0 0; 
                 font-size:16px; color: #D6CBC2;}
 
@@ -46,11 +49,12 @@
             border:1px solid #ccc;
             background-color: gray; 
         }
-        #q_mn ul.nav{ margin:0 auto; margin-top:30px; list-style:none; width:50px;}	
+        #q_mn ul.nav{ margin:0 auto; margin-top:30px; list-style:none; width:50px; display: none;}	
         #q_mn ul.nav li{ margin-bottom:10px}   
         #q_mn ul.nav li a{ color: #ccc;}
         #q_mn ul.nav li.on a{ color: rgb(15, 15, 15);}
-
+        
+        #profile{display: none;}
         #profile .in_profile .in_profile1{float: right; margin-right: 200px; margin-top: 300px;}
         #profile .in_profile .in_profile1 h3{position: absolute; font-size: 60px; margin-left: -200px; margin-top: -170px;}
         #profile .in_profile .in_profile1 h2{font-size: 40px;}
@@ -112,9 +116,33 @@
         #footer_inner{width: 100%; height: 100px; background-color: black;}
         #footer_inner .footer_one h3{font-size: 30px; color: #fff; margin-left: 200px; margin-bottom: -20px;}
         #footer_inner .footer_one img{float: right; width: 40px; height: 40px; margin-right: 50px; margin-bottom: -30px;}
-    </style>
+  
+  
+        
+  </style>
     <script src="js/jquery.js"></script>
     <script>
+        $(function(){
+            $('#introduce1').slideDown(1000);
+            $('#introduce2').slideDown(1000);
+        });
+
+        $(function(){
+            $('.nav').slideDown(1000);
+        });
+        $(function(){
+            $('#profile').slideDown(5000);
+        });
+
+        $(function(){
+            $('.in_profile1').fadeOut(5000);
+            $('.in_profile1').fadeIn(5005);
+        });
+
+        $(function(){
+            $('.profile_h').slideDown(3000);
+        });
+
         $(function(){
             var menu = $('.nav > li');
             var contents = $('#wrap > div');  
@@ -171,13 +199,14 @@
                      <li><a href="#">Profile</a></li>
                      <li><a href="#">Skill</a></li>
                      <li><a href="#">project1</a></li>
+                     <li><a href="#">Project2</a></li>
                      <li><a href="#">contact</a></li>
                   </ul>
                   
               </div> 
-                    <h2>
+                    <h2 id="introduce1">
                         Hello, I'm Koo Tae Mo
-                    </h2>
+                    </h2 id="introduce2">
                     <p>UX Designer & Front End Developer</p>   
             </div>
         </div>
@@ -185,7 +214,7 @@
         <div id="profile">
             <div class="in_profile">
                 <div class="in_profile1">
-                    <h3>Profile</h3>
+                    <h3 class="profile_h">Profile</h3>
                     <h2>profile</h2><br>
                     <p>- 구태모/경남 창원 거주</p>
                     <p>- 1994.03.06</p>
